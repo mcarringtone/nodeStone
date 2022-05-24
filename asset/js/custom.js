@@ -10,3 +10,13 @@ for (var i = 0; i <= 8; i++) {
       localStorage.getItem($($containerBlock.children()[i]).attr("value"))
     );
   }
+  if (moment().hour() > $($containerBlock.children()[i]).attr("value")) {
+    $thisInputBar.addClass("past");
+  } else if (
+    moment().hour() == $($containerBlock.children()[i]).attr("value")
+  ) {
+    $thisInputBar.addClass("present");
+  } else {
+    $thisInputBar.addClass("future");
+  }
+}
